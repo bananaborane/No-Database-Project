@@ -1,33 +1,299 @@
-.App {
-  text-align: center;
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+  font-family: "Open Sans", sans-serif;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.the-header {
+  border: 1px dashed darkorange;
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: skyblue;
+  border-bottom-right-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+}
+
+.the-header h2 {
+  color: white;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.create-and-filter-buttons {
+  -moz-box-shadow: inset 0px 1px 0px 0px #d9fbbe;
+  -webkit-box-shadow: inset 0px 1px 0px 0px #d9fbbe;
+  box-shadow: inset 0px 1px 0px 0px #d9fbbe;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0.05, #b8e356),
+    color-stop(1, #a5cc52)
+  );
+  background: -moz-linear-gradient(top, #b8e356 5%, #a5cc52 100%);
+  background: -webkit-linear-gradient(top, #b8e356 5%, #a5cc52 100%);
+  background: -o-linear-gradient(top, #b8e356 5%, #a5cc52 100%);
+  background: -ms-linear-gradient(top, #b8e356 5%, #a5cc52 100%);
+  background: linear-gradient(to bottom, #b8e356 5%, #a5cc52 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b8e356', endColorstr='#a5cc52',GradientType=0);
+  background-color: #b8e356;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  border: 1px solid #83c41a;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #86ae47;
+}
+.create-and-filter-buttons :hover {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0.05, #a5cc52),
+    color-stop(1, #b8e356)
+  );
+  background: -moz-linear-gradient(top, #a5cc52 5%, #b8e356 100%);
+  background: -webkit-linear-gradient(top, #a5cc52 5%, #b8e356 100%);
+  background: -o-linear-gradient(top, #a5cc52 5%, #b8e356 100%);
+  background: -ms-linear-gradient(top, #a5cc52 5%, #b8e356 100%);
+  background: linear-gradient(to bottom, #a5cc52 5%, #b8e356 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a5cc52', endColorstr='#b8e356',GradientType=0);
+  background-color: #a5cc52;
+}
+.create-and-filter-buttons :active {
+  position: relative;
+  top: 1px;
+}
+
+.Main {
+  border: 1px dashed darkorange;
+  height: 41rem;
+}
+
+.the-footer {
+  border: 1px dashed darkorange;
+  height: 4.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: skyblue;
+  border-top-right-radius: 2rem;
+  border-top-left-radius: 2rem;
+}
+
+.create-section {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.filter-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.the-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 2.4rem 0;
+}
+
+.no-display {
+  color: darkslategray;
+  font-size: 2.7rem;
+}
+
+.edit-delete-buttons {
+  -moz-box-shadow: inset 0px 0px 15px 3px #23395e;
+  -webkit-box-shadow: inset 0px 0px 15px 3px #23395e;
+  box-shadow: inset 0px 0px 15px 3px #23395e;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0.05, #2e466e),
+    color-stop(1, #415989)
+  );
+  background: -moz-linear-gradient(top, #2e466e 5%, #415989 100%);
+  background: -webkit-linear-gradient(top, #2e466e 5%, #415989 100%);
+  background: -o-linear-gradient(top, #2e466e 5%, #415989 100%);
+  background: -ms-linear-gradient(top, #2e466e 5%, #415989 100%);
+  background: linear-gradient(to bottom, #2e466e 5%, #415989 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2e466e', endColorstr='#415989',GradientType=0);
+  background-color: #2e466e;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  border: 1px solid #1f2f47;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  padding: 6px 13px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #263666;
+}
+.edit-delete-buttons :hover {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0.05, #415989),
+    color-stop(1, #2e466e)
+  );
+  background: -moz-linear-gradient(top, #415989 5%, #2e466e 100%);
+  background: -webkit-linear-gradient(top, #415989 5%, #2e466e 100%);
+  background: -o-linear-gradient(top, #415989 5%, #2e466e 100%);
+  background: -ms-linear-gradient(top, #415989 5%, #2e466e 100%);
+  background: linear-gradient(to bottom, #415989 5%, #2e466e 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#415989', endColorstr='#2e466e',GradientType=0);
+  background-color: #415989;
+}
+.edit-delete-buttons :active {
+  position: relative;
+  top: 1px;
 }
