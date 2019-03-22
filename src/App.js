@@ -13,10 +13,9 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <Header />
-          {/* <img src={logo} className="App-logo" alt="logo" width='200' /> */}
           <Main />
         </header>
-        <Footer />
+        <Footer />    
       </div>
     );
   }

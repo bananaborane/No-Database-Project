@@ -175,6 +175,7 @@ table {
   padding: 6px 24px;
   text-decoration: none;
   text-shadow: 0px 1px 0px #86ae47;
+  margin-top: 0.3rem;
 }
 .create-and-filter-buttons :hover {
   background: -webkit-gradient(
@@ -200,16 +201,22 @@ table {
 .the-header {
   height: 6rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  background: rebeccapurple;
+  background: #1f2f47;
   border-bottom-right-radius: 1.4rem;
   border-bottom-left-radius: 1.4rem;
 }
+.side-headers {
+  width: 220px;
+  height: 35px;
+}
 
 .Main {
-  height: 160vh;
+  height: 85vh;
   background: rgb(245, 236, 236);
+  overflow: auto;
+  padding-bottom: 120px;
 }
 
 body {
@@ -219,13 +226,16 @@ body {
 
 .the-footer {
   height: 4.5rem;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rebeccapurple;
+  background: #1f2f47;
   border-top-right-radius: 2rem;
   border-top-left-radius: 2rem;
   color: rgb(245, 236, 236);
+  position: absolute;
+  bottom: 0px;
 }
 
 .create-section {
@@ -248,6 +258,10 @@ body {
   justify-content: space-evenly;
   align-items: center;
   padding: 2.4rem 0;
+}
+
+.the-section p {
+  padding-bottom: 0.3rem;
 }
 
 .no-display {
@@ -285,6 +299,7 @@ body {
   padding: 6px 13px;
   text-decoration: none;
   text-shadow: 0px 1px 0px #263666;
+  margin-top:20px;
 }
 .edit-delete-buttons :hover {
   background: -webkit-gradient(
@@ -348,6 +363,7 @@ input[type="text"]:focus {
   -webkit-transition: all 0.4s linear;
   transition: all 0.4s linear;
   border-radius: 0.8rem;
+
 }
 
 .hovereffect h2 {
@@ -420,4 +436,30 @@ input[type="text"]:focus {
 
 img {
   border-radius: 0.8rem;
+  
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.img-shadow {
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }

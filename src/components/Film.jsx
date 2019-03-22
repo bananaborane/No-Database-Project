@@ -44,27 +44,28 @@ class Film extends Component {
   render() {
     let { title, genre, rating, imageUrl } = this.state
     return this.state.edit ? (
-        <div className='edit-delete-buttons' style={{ display: 'flex', flexDirection: 'column' }}>
+        <div  style={{ display: 'flex', flexDirection: 'column' }}>
             <input type="text" name="title" value={title} placeholder="Enter New Title Here" onChange={this.handleChange} />
             <input type="text" name="genre" value={genre} placeholder="Enter New Genre Here" onChange={this.handleChange} />
             <input type="text" name="rating" value={rating} placeholder="Enter New Rating Here" onChange={this.handleChange} />
             <input type="text" name="imageUrl" value={imageUrl} placeholder="Enter New Image Here" onChange={this.handleChange} />
-            <button onClick={()=>this.handleUpdateButton()}>Update</button>
-            <button onClick={()=>{this.props.removeFilm(this.props.id)}} >Delete</button>
+            <button className='edit-delete-buttons' onClick={()=>this.handleUpdateButton()}>Update</button>
+            <button className='edit-delete-buttons' onClick={()=>{this.props.removeFilm(this.props.id)}} >Delete</button>
         </div>
     ) : (
         <div className="each-film" style={{ display: 'flex', flexDirection: 'column' }}>
-          <div className="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-            <div className="hovereffect">
+          <div className="col-lg-3 col-md-4 col-sm-6 col-xs-12 ">
+            <div className="hovereffect img-shadow">
             <img className="img-responsive" src={this.props.imageUrl} alt="" width="210" height="320" />
               <div className="overlay">
                 <h3>{this.props.title}</h3>
-                <h3>Rating: {this.props.rating}</h3>
+                <h3 style={{padding: '0.3rem'}} >Rating: {this.props.rating}</h3>
+                <h3 >Genre: {this.props.genre}</h3>
+           <button className='edit-delete-buttons' name={this.props.title} onClick={(e)=>{this.handleEditButton(e)}} >Edit</button>
+           <button className='edit-delete-buttons' onClick={()=>{this.props.removeFilm(this.props.id)}} >Delete</button>
               </div>
             </div>
           </div>
-           <button className='edit-delete-buttons' name={this.props.title} onClick={(e)=>{this.handleEditButton(e)}} >Edit</button>
-           <button className='edit-delete-buttons' onClick={()=>{this.props.removeFilm(this.props.id)}} >Delete</button>
         </div>
     )
   }

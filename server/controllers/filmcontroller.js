@@ -40,7 +40,6 @@ let films = [
 module.exports = {
     get: (req, res)=>{
         let result = films;
-        console.log(req.query);
         if (req.query.genre == 'all' || req.query.genre == 'All' || req.query.genre == 'ALL'){
             result = result;
         }
