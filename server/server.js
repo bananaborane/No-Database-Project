@@ -11,8 +11,6 @@ app.use(express.json());
 
 app.get('/api/films', fc.get);
 
-app.get('/api/films?genre', fc.getGenres)
-
 app.post('/api/films', fc.post);
 
 app.put('/api/films/:id', fc.put)

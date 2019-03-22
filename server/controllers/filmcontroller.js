@@ -38,11 +38,17 @@ let films = [
 ];
 
 module.exports = {
-    get: (req, res)=>{res.send(films)},
-    getGenres: (req, res)=>{
+    get: (req, res)=>{
         let result = films;
-        if (req.query.genre){
-            result = result.filter((val)=>{return val.genre === req.query.genre})
+        console.log(req.query);
+        if (req.query.genre == 'all' || req.query.genre == 'All' || req.query.genre == 'ALL'){
+            result = result;
+        }
+         else if (req.query.genre){
+            result = result.filter((val)=>{return val.genre.toLowerCase() === req.query.genre.toLowerCase()})
+        } 
+        else if(req.query.genre == ''){
+            result=result;
         }
         res.send(result)
     },

@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+// theres only like 2 buttons here lol
+
 class Buttons extends Component {
     constructor(){
         super();
@@ -48,18 +50,19 @@ class Buttons extends Component {
   render() {
     return (
       <div className='the-section'>
-          <div className="create-section">
+          <section className="create-section">
             <p>Create a New Film here:</p>
             <input size='26' type="text" name="title" placeholder="Enter Film Title here" onChange={this.handleChange} value={this.state.title} />
             <input size='26' type="text" name="genre" placeholder="Enter Film Genre here" onChange={this.handleChange} value={this.state.genre} />
             <input size='26' maxLength='3' type="text" name="rating" placeholder="Enter Film Rating here (0-100)" onChange={this.handleChange} value={this.state.rating} />
             <input size='26' type="text" name="imageUrl" placeholder="Enter Film Image URL here" onChange={this.handleChange} value={this.state.imageUrl} />
             <button className="create-and-filter-buttons" onClick={()=>this.createFilmButton()}>Create Film</button>
-          </div>
-          <div className="filter-section">
+          </section>
+          <section className="filter-section">
+            <p>Filter the List of Films here:</p>
             <input type="text" name='filteredText' placeholder="Filter Films by Genre" onChange={this.props.handleChange} value={this.props.filteredText} />
             <button className='create-and-filter-buttons' onClick={()=>this.handleFilterButton()} >Filter Films</button>
-          </div>
+          </section>
       </div>
     )
   }

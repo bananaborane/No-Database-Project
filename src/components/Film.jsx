@@ -21,7 +21,8 @@ class Film extends Component {
       }
 
       handleEditButton = (e)=>{
-        if (e.target.name === 'The Godfather Part II' || e.target.name === 'The Shining' || e.target.name === 'Pulp Fiction' || e.target.name === 'Goodfellas' || e.target.name === 'Interstellar') {
+        let { name } = e.target
+        if (name === 'The Godfather Part II' || name === 'The Shining' || name === 'Pulp Fiction' || name === 'Goodfellas' || name === 'Interstellar') {
           alert('dont f with the classics')
       }
       else {
@@ -41,20 +42,27 @@ class Film extends Component {
       }
 
   render() {
+    let { title, genre, rating, imageUrl } = this.state
     return this.state.edit ? (
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <input type="text" name="title" value={this.state.title} placeholder="Enter New Title Here" onChange={this.handleChange} />
-            <input type="text" name="genre" value={this.state.genre} placeholder="Enter New Genre Here" onChange={this.handleChange} />
-            <input type="text" name="rating" value={this.state.rating} placeholder="Enter New Rating Here" onChange={this.handleChange} />
-            <input type="text" name="imageUrl" value={this.state.imageUrl} placeholder="Enter New Image Here" onChange={this.handleChange} />
+        <div className='edit-delete-buttons' style={{ display: 'flex', flexDirection: 'column' }}>
+            <input type="text" name="title" value={title} placeholder="Enter New Title Here" onChange={this.handleChange} />
+            <input type="text" name="genre" value={genre} placeholder="Enter New Genre Here" onChange={this.handleChange} />
+            <input type="text" name="rating" value={rating} placeholder="Enter New Rating Here" onChange={this.handleChange} />
+            <input type="text" name="imageUrl" value={imageUrl} placeholder="Enter New Image Here" onChange={this.handleChange} />
             <button onClick={()=>this.handleUpdateButton()}>Update</button>
             <button onClick={()=>{this.props.removeFilm(this.props.id)}} >Delete</button>
         </div>
     ) : (
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
-           <h3>{this.props.title}</h3>
-           <h4>Rating: {this.props.rating}</h4>
-           <img src={this.props.imageUrl} alt="" width="210" height="320" />
+        <div className="each-film" style={{ display: 'flex', flexDirection: 'column' }}>
+          <div className="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <div className="hovereffect">
+            <img className="img-responsive" src={this.props.imageUrl} alt="" width="210" height="320" />
+              <div className="overlay">
+                <h3>{this.props.title}</h3>
+                <h3>Rating: {this.props.rating}</h3>
+              </div>
+            </div>
+          </div>
            <button className='edit-delete-buttons' name={this.props.title} onClick={(e)=>{this.handleEditButton(e)}} >Edit</button>
            <button className='edit-delete-buttons' onClick={()=>{this.props.removeFilm(this.props.id)}} >Delete</button>
         </div>

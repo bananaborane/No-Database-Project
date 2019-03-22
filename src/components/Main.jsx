@@ -51,7 +51,7 @@ class Main extends Component {
   }
 
   filterFilms = (genre)=>{
-    axios.get('/api/films?genre=${genre}')
+    axios.get(`/api/films?genre=${genre}`)
         .then(res => {
         console.log(res);
         this.setState({
@@ -60,6 +60,8 @@ class Main extends Component {
     })
         .catch(err => console.log(err))
   }
+
+  // even though, client and server endpoints for filter method are different, Express takes care of req.query
 
   componentDidMount(){
       axios.get('/api/films')
