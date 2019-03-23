@@ -63,17 +63,26 @@ class Main extends Component {
 
   // even though, client and server endpoints for filter method are different, Express takes care of req.query
 
+  
   componentDidMount(){
       axios.get('/api/films')
       .then(res => {
           console.log(res);
           this.setState({
               films: res.data
-          })
+            })
       })
       .catch(err => console.log(err))
-  }
-  
+    }
+    
+    //   componentDidMountwithAPI=()=>{
+    //       axios.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=MYAPIKEY&language=en-US&page=1`)
+    //       .then(res=>{ console.log(res);
+    //         this.setState({
+    //             films: res.data.results
+    //         }) }).catch(err=>console.log(`OH MY GOD, WE HAVE AN ERROR: ${err}`));
+    //   }
+    
   render() {
     return (<div className="Main">
                 <Buttons films={this.state.films} handleChange={this.handleChange} createFilm={this.createFilm} filteredText={this.state.filteredText} filterFilms={this.filterFilms}/>

@@ -199,6 +199,7 @@ table {
 }
 
 .the-header {
+  width:100%;
   height: 6rem;
   display: flex;
   justify-content: space-between;
@@ -213,19 +214,23 @@ table {
 }
 
 .Main {
+  background-attachment: fixed;
+  width:100%;
   height: 85vh;
   background: rgb(245, 236, 236);
   overflow: auto;
   padding-bottom: 120px;
+  padding-top: 90px;
 }
 
 body {
+  background-attachment: fixed;
   background: rgb(245, 236, 236);
   color: darkgray;
 }
 
 .the-footer {
-  height: 4.5rem;
+  height: 3.8rem;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -238,27 +243,47 @@ body {
   bottom: 0px;
 }
 
-.create-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.filter-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 .the-section {
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  padding: 2.4rem 0;
+  padding: 2.2rem 0;
 }
+
+.create-section {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  left: 22%;
+  background: gold;
+  padding: 20px 20px;
+  opacity: 0.75;
+  border-radius: 0.9rem;
+  font-size: 0.8rem;
+}
+
+.filter-section {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  right: 22.5%;
+  background: gold;
+  padding: 20px 20px;
+  opacity: 0.75;
+  border-radius: 0.9rem;
+  font-size: 0.8rem;
+  width: 255px;
+  height: 208px;
+}
+
 
 .the-section p {
   padding-bottom: 0.3rem;
@@ -301,6 +326,7 @@ body {
   text-shadow: 0px 1px 0px #263666;
   margin-top:20px;
 }
+
 .edit-delete-buttons :hover {
   background: -webkit-gradient(
     linear,
@@ -317,6 +343,7 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#415989', endColorstr='#2e466e',GradientType=0);
   background-color: #415989;
 }
+
 .edit-delete-buttons :active {
   position: relative;
   top: 1px;
@@ -341,7 +368,7 @@ input[type="text"]:focus {
   position: relative;
   text-align: center;
   cursor: default;
-  border-radius: 0.8rem;
+  border-radius: 0.5rem;
 }
 
 .hovereffect .overlay {
@@ -362,7 +389,7 @@ input[type="text"]:focus {
   position: relative;
   -webkit-transition: all 0.4s linear;
   transition: all 0.4s linear;
-  border-radius: 0.8rem;
+  border-radius: 0.5rem;
 
 }
 
@@ -394,19 +421,19 @@ input[type="text"]:focus {
   transition: all 0.2s ease-in-out;
   margin: 50px 0 0;
   padding: 7px 14px;
-  border-radius: 0.8rem;
+  border-radius: 0.5rem;
 }
 
 .hovereffect a.info:hover {
   box-shadow: 0 0 5px #fff;
-  border-radius: 0.8rem;
+  border-radius: 0.5rem;
 }
 
 .hovereffect:hover img {
   -ms-transform: scale(1.2);
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
-  border-radius: 0.8rem;
+  border-radius: 0.5rem;
 }
 
 .hovereffect:hover .overlay {
