@@ -11,7 +11,7 @@ class FilmList extends Component {
         </div> )
       })) : ( <div className="no-display"><h2> You have no films to display, add some!</h2></div> )
     return (
-      <div style={{ display:"flex", flexDirection:"row", justifyContent:'center', alignItems:'center', flexWrap:'wrap', paddingTop: 66 }}>
+      <div className='list-of-films'>
           {mappedFilms}
       </div>
     )

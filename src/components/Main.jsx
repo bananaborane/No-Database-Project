@@ -3,31 +3,67 @@ import Buttons from './Buttons'
 import axios from "axios";
 import FilmList from './FilmList'
 
+let baseUrl=`https://api.themoviedb.org/3`
+
 class Main extends Component {
-  constructor() {
-    super();
-    this.state = {
-        films: [],
-        filteredText: ''
+    constructor() {
+        super();
+        this.state = {
+            films: [],
+            filteredText: ''
     };
   }
+  
+
+  
+  // The FOLLOWING COMMENTED CODE WORKS WITH TMDB API 
+  // Assumes that all methods work with TMDB and doesn't throw an error
+
+  //   componentDidMountwithTMDB=()=>{
+  //       axios.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=---MYAPIKEY---&language=en-US&page=1`)
+  //       .then(res=>{ console.log(res);
+  //         this.setState({
+  //             films: res.data.results
+  //         }) }).catch(err=>console.log(`OH MY GOD, WE HAVE AN ERROR: ${err}`));
+  //   }
+
+  filterFilmswithTMDB =()=>{}
+
+  createFilmwithTMDB =()=>{}
+
+  removeFilmwithTMDB =()=>{}
+
+  updateFilmwithTMDB =()=>{}
+
+//   handleChange = (e) => {
+//     let { name, value } = e.target;
+//   this.setState({
+//       [name]: value
+//   });
+// };
+
+
+
+
+
+  // The FOLLOWING CODE works with a CUSTOM EXPRESS SERVER with 'DUMMY' DATA
 
   handleChange = (e) => {
-    let { name, value } = e.target;
+      let { name, value } = e.target;
     this.setState({
-      [name]: value
+        [name]: value
     });
-  };
+};
 
-  createFilm = (film)=>{
-      axios.post('/api/films', film)
-      .then(res => this.setState({
-          films: res.data
-      }))
-      .catch(err=>console.log(err))
-  }
+createFilm = (film)=>{
+    axios.post('/api/films', film)
+    .then(res => this.setState({
+        films: res.data
+    }))
+    .catch(err=>console.log(err))
+}
 
-  removeFilm = (num)=>{
+removeFilm = (num)=>{
 
     setTimeout(()=>{
     axios.delete(`/api/films/${num}`)
@@ -75,13 +111,6 @@ class Main extends Component {
       .catch(err => console.log(err))
     }
     
-    //   componentDidMountwithAPI=()=>{
-    //       axios.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=MYAPIKEY&language=en-US&page=1`)
-    //       .then(res=>{ console.log(res);
-    //         this.setState({
-    //             films: res.data.results
-    //         }) }).catch(err=>console.log(`OH MY GOD, WE HAVE AN ERROR: ${err}`));
-    //   }
     
   render() {
     return (<div className="Main">

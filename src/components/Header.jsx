@@ -6,7 +6,7 @@ function Header(props) {
     <div className="the-header">
         <div className='side-headers'></div>
         <header>Movie Watchlist</header>
-        <div style ={{display:'flex', alignItems: 'center'}} className='side-headers'>
+        <div className='side-headers made-possible'>
             Made Possible by:
             <img src={logo} className="App-logo" alt="logo" width='80' />
         </div>

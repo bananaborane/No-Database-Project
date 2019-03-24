@@ -44,7 +44,7 @@ class Film extends Component {
   render() {
     let { title, genre, rating, imageUrl } = this.state
     return this.state.edit ? (
-        <div  style={{ display: 'flex', flexDirection: 'column' }}>
+        <div className='edit-flag-true'>
             <input type="text" name="title" value={title} placeholder="Enter New Title Here" onChange={this.handleChange} />
             <input type="text" name="genre" value={genre} placeholder="Enter New Genre Here" onChange={this.handleChange} />
             <input type="text" name="rating" value={rating} placeholder="Enter New Rating Here" onChange={this.handleChange} />
@@ -53,7 +53,7 @@ class Film extends Component {
             <button className='edit-delete-buttons' onClick={()=>{this.props.removeFilm(this.props.id)}} >Delete</button>
         </div>
     ) : (
-        <div className="each-film" style={{ display: 'flex', flexDirection: 'column' }}>
+        <div className="each-film">
           <div className="col-lg-3 col-md-4 col-sm-6 col-xs-12 ">
             <div className="hovereffect img-shadow">
             <img className="img-responsive" src={this.props.imageUrl} alt="" width="210" height="320" />
